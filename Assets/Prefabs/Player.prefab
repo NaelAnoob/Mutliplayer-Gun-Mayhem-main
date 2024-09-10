@@ -19996,7 +19996,7 @@ MonoBehaviour:
   WeaponHolder: {fileID: 2558226410885428934}
   Weapon:
   - {fileID: 5009881345536008598, guid: 4bf34204912ac5541890e83432c3c601, type: 3}
-  - {fileID: 5009881345536008598, guid: 4bf34204912ac5541890e83432c3c601, type: 3}
+  - {fileID: 0}
 --- !u!114 &-8284886717183490091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20052,6 +20052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfb5d90535c1bb478614973eff996d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health:
+    m_InternalValue: 100
   healthText: {fileID: 0}
   isLocalPlayer: 0
 --- !u!1 &6234693995442377364

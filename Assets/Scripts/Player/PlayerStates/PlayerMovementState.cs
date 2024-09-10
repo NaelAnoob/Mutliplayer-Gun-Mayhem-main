@@ -16,7 +16,6 @@ public class PlayerMovementState : PlayerStateMachine.State
     }
     public override void OnStateEnter(PlayerState prevStateType, object[] args)
     {
-        Debug.Log("Now Moving");
         player.rb.gravityScale = 1;
     }
 }

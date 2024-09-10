@@ -47,7 +47,7 @@ public class PlayerStateMachine : IStateMachine<PlayerState, PlayerStateMachine>
 
     public override void OnNetworkSpawn()
     {
-        if (IsServer)
+        if (IsServer && !IsOwner)
         {
             //For new client to server synchronisation
             LoadWeaponClientRpc();
@@ -92,7 +92,7 @@ public class PlayerStateMachine : IStateMachine<PlayerState, PlayerStateMachine>
         {
             ChangeState(PlayerState.Jumping);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             UseItem();
         }
