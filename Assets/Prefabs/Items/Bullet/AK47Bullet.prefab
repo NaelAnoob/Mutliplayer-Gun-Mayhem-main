@@ -140,7 +140,7 @@ MonoBehaviour:
   UseQuaternionSynchronization: 0
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
-  InLocalSpace: 0
+  InLocalSpace: 1
   Interpolate: 1
   SlerpPosition: 0
 --- !u!114 &2038398544945173062
@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb932a5c5d8af04b8959ef6f7a9302d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletVelocity: 100
-  damageAmount: 19
-  pushAmount: 1233
+  bulletVelocity: 50
+  damageAmount: 12
+  pushAmount: 100
   despawnTime: 5
   targetLayers:
     serializedVersion: 2
@@ -187,7 +187,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &-614452637149440462
 MonoBehaviour:
@@ -233,7 +233,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0.26043612, y: 0.41118008}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.28866667}
@@ -244,7 +244,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.9375705, y: 1.3996934}
   m_EdgeRadius: 0
 --- !u!96 &8471822868505534940
 TrailRenderer:

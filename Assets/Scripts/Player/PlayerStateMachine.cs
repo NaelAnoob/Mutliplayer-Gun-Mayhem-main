@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Unity.Netcode;
+using UnityEngine.UIElements;
 public class PlayerStateMachine : IStateMachine<PlayerState, PlayerStateMachine>
 {
     [Header("MOVEMENT")]
@@ -18,17 +19,19 @@ public class PlayerStateMachine : IStateMachine<PlayerState, PlayerStateMachine>
     public float jumpMovementMultiplier = 1;
     public float jumpPeekMovementMultiplier = 1.5f;
     [Header("MISC")]
+    public float knockbackDecayTime = 0.5f;
     public Transform groundCheck;
     public Rigidbody2D rb;
     public LayerMask groundLayer;
     [Header("Combat")]
     public Transform WeaponHolder;
     public IItem[] Weapon;
+    private Vector2 externalForce;
+    private float externalForceTime = 0;
     public WeaponUsage[] CurrentItem { private set; get; } = new WeaponUsage[2];
     public WeaponUsage LeftHand => CurrentItem[0];
     public WeaponUsage RightHand => CurrentItem[1];
 
-    [HideInInspector]
     private void Awake()
     {
         RegisterState(new PlayerMovementState(this));
@@ -124,9 +127,20 @@ public class PlayerStateMachine : IStateMachine<PlayerState, PlayerStateMachine>
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * (sprinting? sprintSpeed:speed) * Time.fixedDeltaTime, rb.velocity.y);
+        //externalForceTime -= Time.fixedDeltaTime;
+        //externalForce = Vector2.Lerp(externalForce, Vector2.zero, externalForceTime / knockbackDecayTime);
+        rb.velocity = new Vector2(rb.velocity.x/2 + horizontal * (sprinting? sprintSpeed:speed) * Time.fixedDeltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -sprintSpeed, +sprintSpeed), rb.velocity.y);
         CurrentState.OnStateFixedUpdate();
     }
+
+    //[ServerRpc(RequireOwnership =false)]
+    //public void addForceServerRpc(Vector2 force) 
+    //{
+    //    Debug.Log(force);
+    //    externalForceTime = knockbackDecayTime;
+    //    externalForce = force;
+    //}
     public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.05f, groundLayer);

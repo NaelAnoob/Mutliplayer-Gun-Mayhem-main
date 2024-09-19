@@ -39,10 +39,9 @@ public class ProjectileHandler : Projectile
         if (!IsServer) return;
         if ((targetLayers & (1 << collision.gameObject.layer)) != 0)
         {
-            Debug.Log("Damage player");
             Health healthScript = collision.gameObject.GetComponent<Health>();
             healthScript.TakeDamage(damageAmount);
-            PushPlayerClientRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId, rb.velocity.normalized, pushAmount);
+            PushPlayerClientRpc(collision.gameObject.GetComponent<NetworkObject>().NetworkObjectId, new Vector2(rb.velocity.normalized.x, 0), pushAmount);
         }
     }
 
@@ -50,14 +49,15 @@ public class ProjectileHandler : Projectile
     [ClientRpc(RequireOwnership = false)]
     private void PushPlayerClientRpc(ulong playerNetworkObjectId, Vector2 pushDirection, float pushForce)
     {
+        Debug.Log(pushDirection);
         NetworkObject networkObject = NetworkManager.Singleton.SpawnManager.SpawnedObjects[playerNetworkObjectId];
         if (networkObject != null)
         {
             Rigidbody2D playerRb = networkObject.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {
-                Debug.Log("working");
                 playerRb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+                //playerRb.addForceServerRpc(pushDirection * pushForce);
             }
         }
     }

@@ -5,11 +5,19 @@ using TMPro;
 using Unity.Netcode;
 public class Health : NetworkBehaviour
 {
+    public int maxHealth;
+    [HideInInspector]
     public NetworkVariable<int> health = new NetworkVariable<int>(100);
+
+    public NetworkVariable<int> life = new NetworkVariable<int>(10);
     [Header("UI")]
     public TextMeshProUGUI healthText;
     public bool isLocalPlayer;
 
+    private void Awake()
+    {
+        health.Value = maxHealth;
+    }
     public void TakeDamage(int _damage)
     {
         TakeHealthServerRpc(_damage);

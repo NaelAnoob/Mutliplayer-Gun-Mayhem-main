@@ -139,7 +139,7 @@ MonoBehaviour:
     - rid: 4613030888915337228
       type: {class: WeaponUsage, ns: , asm: Assembly-CSharp}
       data:
-        fireMode: 2
+        fireMode: 1
         mags: 5
         ammoPerMag: 3
         ammo: 213

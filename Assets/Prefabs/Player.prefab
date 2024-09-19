@@ -19980,7 +19980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213986b8536af52438dbe6cefb366a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 100
   sprintSpeed: 200
   movementMultiplier: 2
   gravityUpwardModifier: 10
@@ -19988,6 +19988,7 @@ MonoBehaviour:
   jumpVelocity: 200
   jumpMovementMultiplier: 1
   jumpPeekMovementMultiplier: 1.5
+  knockbackDecayTime: 1
   groundCheck: {fileID: 1135801772230896123}
   rb: {fileID: 1135801772094865335}
   groundLayer:
@@ -20052,8 +20053,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfb5d90535c1bb478614973eff996d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10000
   health:
     m_InternalValue: 100
+  life:
+    m_InternalValue: 10
   healthText: {fileID: 0}
   isLocalPlayer: 0
 --- !u!1 &6234693995442377364
