@@ -22,6 +22,7 @@ public class WeaponUsage : ItemUsage
     public Transform gunBarrel;
     [HideInInspector]
     public PlayerStateMachine player;
+    public SpawnManager.ObjectType bulletType;
     private bool canShoot = true;
     public override void UseItem()
     {
@@ -144,14 +145,14 @@ public class WeaponUsage : ItemUsage
             Vector2 direction = Vector2.left;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
             Quaternion rotation = Quaternion.Euler(0,0,angle + randomSpread);
-            SpawnManager.Instance.RequestSpawn(SpawnManager.ObjectType.AkBullet, gunBarrel.transform.position, rotation);
+            SpawnManager.Instance.RequestSpawn(bulletType, gunBarrel.transform.position, rotation);
         }
         else
         {
             Vector2 direction = Vector2.right;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
             Quaternion rotation = Quaternion.Euler(0,0,angle + randomSpread);
-            SpawnManager.Instance.RequestSpawn(SpawnManager.ObjectType.AkBullet, gunBarrel.transform.position, rotation);
+            SpawnManager.Instance.RequestSpawn(bulletType, gunBarrel.transform.position, rotation);
         }
     }
     public IEnumerator Reload()

@@ -19996,7 +19996,7 @@ MonoBehaviour:
     m_Bits: 64
   WeaponHolder: {fileID: 2558226410885428934}
   Weapon:
-  - {fileID: 5009881345536008598, guid: 4bf34204912ac5541890e83432c3c601, type: 3}
+  - {fileID: 5009881345536008598, guid: 68eed8453c7b26f4fb03fe291b9e4e40, type: 3}
   - {fileID: 0}
 --- !u!114 &-8284886717183490091
 MonoBehaviour:

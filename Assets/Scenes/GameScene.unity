@@ -178,6 +178,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7114797420294570637, guid: 3003dfd1d608eb14d88167e0887f70df, type: 3}
+      propertyPath: networkObjects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114797420294570637, guid: 3003dfd1d608eb14d88167e0887f70df, type: 3}
+      propertyPath: networkObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 2110530927652023768, guid: 91085260560458943bcb121a36451fba, type: 3}
+    - target: {fileID: 7114797420294570637, guid: 3003dfd1d608eb14d88167e0887f70df, type: 3}
+      propertyPath: networkObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 2110530927652023768, guid: a86768332cd198c42b60b4008b243bfd, type: 3}
+    - target: {fileID: 7114797420294570637, guid: 3003dfd1d608eb14d88167e0887f70df, type: 3}
+      propertyPath: networkObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 2110530927652023768, guid: dfaf43ba4080d9c4a8608decfe1d29fa, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -579,7 +595,7 @@ RectTransform:
   - {fileID: 1318133617}
   - {fileID: 821548542}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.19}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

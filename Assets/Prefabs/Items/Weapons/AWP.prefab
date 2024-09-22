@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3064354517601933121}
   - component: {fileID: 5009881345536008598}
   m_Layer: 0
-  m_Name: ak-47
+  m_Name: AWP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9ef79ba59db38f40bd698e29162563d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 395587f5b7a351b47bd38a7e3b5fe330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ae7f85abe54ee42ad630a04182b6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: AK47
+  itemName: AWP
   itemType: 2
   usage:
     rid: 4613030888915337228
@@ -139,17 +139,17 @@ MonoBehaviour:
     - rid: 4613030888915337228
       type: {class: WeaponUsage, ns: , asm: Assembly-CSharp}
       data:
-        fireMode: 0
+        fireMode: 1
         mags: 5
-        ammoPerMag: 30
-        ammo: 30
+        ammoPerMag: 3
+        ammo: 3
         reloadTime: 1
-        spreadAngle: 10
-        burstCount: 3
-        burstDelay: 0.5
-        timeBetweenEachBurst: 0.1
-        autoFireDelay: 0.1
+        spreadAngle: 0
+        burstCount: 1
+        burstDelay: 0.1
+        timeBetweenEachBurst: 0.2
+        autoFireDelay: 1
         gunObject: {fileID: 8246178398067546538}
         gunBarrel: {fileID: 887127279850233977}
         player: {fileID: 0}
-        bulletType: 0
+        bulletType: 3

@@ -36,5 +36,8 @@ public class SpawnManager : NetworkBehaviour
     public enum ObjectType
     {
         AkBullet,
+        DeagleBullet,
+        ShotgunBullet,
+        AWPBullet
     }
 }
